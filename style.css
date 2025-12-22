@@ -191,19 +191,14 @@ footer a {
   background: #0b65c2;
 }
 
-/* =====================================================
-      RESPONSIVE DESIGN
-===================================================== */
-
-/* TABLET & HP BESAR */
 @media (max-width: 768px) {
   header {
-    padding: 15px;
+    padding: 18px;
   }
 
   header img {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
   }
 
   header h1 {
@@ -219,29 +214,28 @@ footer a {
   }
 }
 
-/* HP */
 @media (max-width: 600px) {
 
   nav {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;             
+    margin-top: 5px;
     text-align: center;
   }
 
   nav a {
-    font-size: 1rem;
-    padding: 5px 0;
+    font-size: 0.9rem;   
+    padding: 4px 0;
   }
 
   header img {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
   }
 
   header h1 {
-    font-size: 1.3rem;
-    text-align: center;
+    font-size: 1.25rem;
   }
 
   section {
@@ -253,7 +247,7 @@ footer a {
   }
 
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
   .projects,
@@ -275,19 +269,23 @@ footer a {
     bottom: 20px;
     right: 20px;
     padding: 8px 12px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
-/* HP KECIL (360px) */
 @media (max-width: 400px) {
 
-  header h1 {
-    font-size: 1.1rem;
+  nav {
+    gap: 6px;
   }
 
   nav a {
-    font-size: 0.9rem;
+    font-size: 0.8rem;     /* makin kecil */
+    padding: 3px 0;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
   }
 
   section p {
