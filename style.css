@@ -44,6 +44,8 @@ nav {
   display: flex;
   gap: 15px;
   margin-top: 5px;
+  flex-wrap: wrap; /* FIX: supaya rapi ketika layar kecil */
+  justify-content: center;
 }
 
 nav a {
@@ -51,6 +53,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
+  font-size: 1rem;
 }
 
 nav a.active { color: #1e90ff; }
@@ -191,6 +194,7 @@ footer a {
   background: #0b65c2;
 }
 
+/* TABLET */
 @media (max-width: 768px) {
   header {
     padding: 18px;
@@ -214,19 +218,16 @@ footer a {
   }
 }
 
+/* HP MEDIUM */
 @media (max-width: 600px) {
 
   nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;             
-    margin-top: 5px;
-    text-align: center;
+    gap: 10px;
   }
 
   nav a {
-    font-size: 0.9rem;   
-    padding: 4px 0;
+    font-size: 0.9rem;
+    padding: 4px 8px;
   }
 
   header img {
@@ -273,6 +274,7 @@ footer a {
   }
 }
 
+/* HP SANGAT KECIL */
 @media (max-width: 400px) {
 
   nav {
@@ -280,7 +282,7 @@ footer a {
   }
 
   nav a {
-    font-size: 0.8rem;     /* makin kecil */
+    font-size: 0.8rem; 
     padding: 3px 0;
   }
 
