@@ -1,168 +1,586 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="img/img-2.png">
-<title>Portfolio Al Farabi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Al Farabi Sidqi | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-<!-- LINK CSS -->
-<link rel="stylesheet" href="style.css">
+    <style>
+        /* --- THEME VARIABLES --- */
+        :root {
+            --bg: #121212;
+            --bg-secondary: #1a1a1a;
+            --bg-snippet: #1e1e1e;
+            --primary: #e4e4e4;
+            --accent: #d4a373;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border: #333333;
+            --btn-bg: #e4e4e4;
+            --btn-text: #121212;
+            --cursor-outer: rgba(228, 228, 228, 0.3);
+            --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
+        [data-theme="light"] {
+            --bg: #f4f1ea;
+            --bg-secondary: #ffffff;
+            --bg-snippet: #e9e5db;
+            --primary: #2d3e50;
+            --accent: #c05d4d;
+            --text-main: #1a1a1a;
+            --text-muted: #5e5e5e;
+            --border: #d1cdc2;
+            --btn-bg: #2d3e50;
+            --btn-text: #ffffff;
+            --cursor-outer: rgba(45, 62, 80, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            cursor: none; 
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color var(--transition), color var(--transition);
+            overflow-x: hidden;
+        }
+
+        /* --- CUSTOM CURSOR --- */
+        #cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+
+        #cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--primary);
+            background-color: var(--cursor-outer);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.15s ease-out, background-color 0.3s ease, border 0.3s ease;
+        }
+
+        .cursor-hover #cursor-outline {
+            transform: scale(1.5);
+            background-color: transparent;
+            border-color: var(--accent);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .mono {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            transition: background-color var(--transition), border var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links a:hover { color: var(--text-main); }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: none;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            padding: 100px 0;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%) contrast(110%);
+            border: 1px solid var(--border);
+            padding: 10px;
+            background: var(--bg-secondary);
+        }
+
+        /* --- BUTTON --- */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--btn-bg);
+            color: var(--btn-text);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* --- SECTIONS --- */
+        section { padding: 100px 0; border-top: 1px solid var(--border); }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 { font-size: 2.5rem; }
+
+        /* --- SKILLS --- */
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+        }
+
+        .skill-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .skill-label { font-size: 1rem; color: var(--text-main); font-weight: 500; }
+        .skill-bar-bg { background: var(--border); height: 6px; border-radius: 3px; overflow: hidden; }
+        .skill-bar-fill { height: 100%; background: var(--accent); transition: width 1.5s ease; width: 0; }
+
+        /* --- WORK/PROJECTS --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .project-info h3 { font-size: 1.6rem; margin: 10px 0 5px 0; }
+        .project-info p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .project-link-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-main);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-link-item:hover { color: var(--accent); }
+
+        /* --- TIMELINE --- */
+        .timeline-item { display: grid; grid-template-columns: 200px 1fr; margin-bottom: 60px; }
+        .timeline-item h3 { font-size: 1.4rem; margin-bottom: 5px; }
+        .timeline-item h4 { font-size: 0.95rem; color: var(--accent); margin-bottom: 10px; font-weight: 400; }
+
+        /* --- CONTACT --- */
+        .contact-area { text-align: center; padding: 60px 0; }
+        .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 40px; }
+        .social-links a { color: var(--text-muted); }
+        .social-links a:hover { color: var(--accent); }
+
+        footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 850px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+            .nav-links { display: none; }
+            .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+            .skill-item { grid-template-columns: 1fr; gap: 5px; }
+            #cursor-dot, #cursor-outline { display: none; }
+            * { cursor: auto; }
+        }
+    </style>
 </head>
-<body>
+<body data-theme="dark">
 
-<header>
-  <img src="img/img-2.png" alt="Al Farabi Photo">
-  <h1>Mohammad Al Farabi Sidqi</h1>
-  <br>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-  
-<section id="about">
-  <h2>About Me</h2>
-  <p>Hi! I'm Mohammad Al Farabi Sidqi, an Informatics Engineering student at Universitas Trunodjoyo Madura (UTM), as well as an IT educator and web developer who enjoys teaching and building logical, efficient digital solutions.
-    <br><br>
-    I focus on helping students understand how programming truly works, starting from core logic to real-world implementation.
-    <br><br>
-    Beyond teaching, I actively develop web-based projects and continuously learn new technologies to improve both my technical abilities and my effectiveness as an educator.</p>
-</section>
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
+    <div class="container">
+        <header>
+            <nav>
+                <a href="#" class="logo">M. Al Farabi</a>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li><a href="#about" class="hover-target">About</a></li>
+                        <li><a href="#projects" class="hover-target">Projects</a></li>
+                        <li><a href="#experience" class="hover-target">Experience</a></li>
+                        <li><a href="#skills" class="hover-target">Skills</a></li>
+                        <li><a href="#contact" class="hover-target">Contact</a></li>
+                    </ul>
+                    <button class="theme-toggle hover-target" id="theme-btn">
+                        <i data-lucide="sun" id="theme-icon"></i>
+                    </button>
+                    <div class="mono" id="current-time">00:00</div>
+                </div>
+            </nav>
+        </header>
 
-    <div class="project">
-      <h3><a href="https://kamusabsensi.my.id/" target="_blank">Online Attendance System</a></h3>
-      <p>A QR-based attendance system with a real-time dashboard.</p>
+        <!-- HERO -->
+        <section class="hero" id="home" style="border-top: none;">
+            <div class="hero-content">
+                <span class="mono">IT Educator & Developer</span>
+                <h1>Mohammad Al Farabi Sidqi.</h1>
+                <p>Informatics Engineering student at UTM. I build logical, efficient digital solutions and help others understand how programming truly works.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#projects" class="btn hover-target">View Projects</a>
+                    <a href="#contact" class="btn hover-target" style="background: transparent; border: 1px solid var(--border); color: var(--text-main);">Let's Talk</a>
+                </div>
+            </div>
+            <div class="profile-img-container">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="Portrait Al Farabi">
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <span class="mono">01 / Profile</span>
+            </div>
+            <div style="max-width: 800px;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Hi! I'm Mohammad Al Farabi Sidqi, an Informatics Engineering student at Universitas Trunodjoyo Madura (UTM).</p>
+                <p>I focus on helping students understand how programming truly works, starting from core logic to real-world implementation. Beyond teaching, I actively develop web-based projects and continuously learn new technologies to improve both my technical abilities and my effectiveness as an educator.</p>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <span class="mono">02 / Selected Works</span>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="mono">2025</span>
+                        <h3>Online Attendance System</h3>
+                        <p>A QR-based attendance system with a real-time dashboard for seamless institutional tracking.</p>
+                        <div class="project-links">
+                            <a href="https://kamusabsensi.my.id/" target="_blank" class="project-link-item hover-target"><i data-lucide="external-link" size="18"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="mono">2024</span>
+                        <h3>English Q&A Web</h3>
+                        <p>A Q&A website for learning English, developed as a PAW course project focusing on community interaction.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/mohammadalfarabi/projeck-qna/" target="_blank" class="project-link-item hover-target"><i data-lucide="github" size="18"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="mono">2024</span>
+                        <h3>Janny Poppy Long Neck</h3>
+                        <p>A fun experimental website exploring complex DOM interaction and physics-based animations.</p>
+                        <div class="project-links">
+                            <a href="https://mohammadalfarabi.github.io/jany-poopy-long-neck/" target="_blank" class="project-link-item hover-target"><i data-lucide="external-link" size="18"></i> Visit Silly Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="mono">2024</span>
+                        <h3>Batch 2024 Biodata</h3>
+                        <p>A simple yet effective biodata directory website for the Informatics Engineering 2024 cohort.</p>
+                        <div class="project-links">
+                            <a href="https://mohammadalfarabi.github.io/biodata-infor24/" target="_blank" class="project-link-item hover-target"><i data-lucide="external-link" size="18"></i> View Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <span class="mono">03 / Career Path</span>
+            </div>
+            
+            <div class="timeline-item">
+                <span class="mono">2025 — Now</span>
+                <div>
+                    <h3>Teaching Assistant</h3>
+                    <h4>WargaLab | Informatics Engineering, UTM</h4>
+                    <p>Created responsive and interactive web pages using HTML, CSS, and JS. Mentoring students in core web technologies.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="mono">2025</span>
+                <div>
+                    <h3>Creator & Developer</h3>
+                    <h4>Asrama Management Website | UTM</h4>
+                    <p>Designed and developed a digital dormitory system including attendance, activity logs, and admin dashboard using PHP & MySQL.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="mono">2025</span>
+                <div>
+                    <h3>3rd Place</h3>
+                    <h4>GEMASTIK Software Development (UTM)</h4>
+                    <p>Developed fast and minimalist website solutions tailored for Small and Medium Enterprises (SMEs).</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="mono">2020 — 2021</span>
+                <div>
+                    <h3>Owner & Creator</h3>
+                    <h4>Topupkuy Application</h4>
+                    <p>Built a digital top-up platform focused on fast transactions and user simplicity during the early stages of my coding journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="section-header">
+                <h2>Skills</h2>
+                <span class="mono">04 / Expertise</span>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <span class="skill-label">IT & Programming Education</span>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Problem Solving & Logic</span>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Web Dev (HTML, CSS, JS, PHP)</span>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="70%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">UI/UX Design</span>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="65%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Database & API Basics</span>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="50%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="contact-area">
+                <span class="mono">Connect with me</span>
+                <h2>Have a question or a project?</h2>
+                <a href="mailto:gua@alfarabi.my.id" class="btn hover-target" style="margin-top: 30px;">gua@alfarabi.my.id</a>
+                <div class="social-links">
+                    <a href="https://instagram.com/al.frabi.s" target="_blank" class="hover-target"><i data-lucide="instagram"></i></a>
+                    <a href="https://linkedin.com/in/alfarabis" target="_blank" class="hover-target"><i data-lucide="linkedin"></i></a>
+                    <a href="https://github.com/mohammadalfarabi" target="_blank" class="hover-target"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Mohammad Al Farabi Sidqi | Made with logic and aesthetic.</p>
+            </div>
+        </footer>
     </div>
 
-    <div class="project">
-      <h3><a href="https://github.com/mohammadalfarabi/projeck-qna/" target="_blank">English Q&A web</a></h3>
-      <p>A Q&A website for learning English, developed as a PAW course project.</p>
-    </div>
+    <script>
+        lucide.createIcons();
 
-    <div class="project">
-      <h3><a href="https://mohammadalfarabi.github.io/jany-poopy-long-neck/" target="_blank">Silly Useless Website – “Janny Poppy Long Neck”</a></h3>
-      <p>A fun experimental website exploring DOM interaction and animation.</p>
-    </div>
+        // Custom Cursor
+        const dot = document.getElementById('cursor-dot');
+        const outline = document.getElementById('cursor-outline');
+        const body = document.body;
 
-    <div class="project">
-      <h3><a href="https://mohammadalfarabi.github.io/biodata-infor24/" target="_blank">Informatics Engineering Batch 2024 Biodata Website</a></h3>
-      <p>A simple biodata website for Informatics Engineering 2024 cohort.</p>
-    </div>
+        window.addEventListener('mousemove', (e) => {
+            dot.style.left = `${e.clientX}px`;
+            dot.style.top = `${e.clientY}px`;
+            dot.style.transform = `translate(-50%, -50%)`;
 
-    <div class="project">
-      <h3><a href="https://github.com/mohammadalfarabi/kalk24" target="_blank">Web Calculator</a></h3>
-      <p>Calculator app using HTML/CSS and Flask backend.</p>
-    </div>
+            outline.animate({
+                left: `${e.clientX}px`,
+                top: `${e.clientY}px`
+            }, { duration: 500, fill: "forwards" });
+            
+            outline.style.transform = `translate(-50%, -50%)`;
+        });
 
-  </div>
-</section>
+        const hoverTargets = document.querySelectorAll('.hover-target, a, button');
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => body.classList.add('cursor-hover'));
+            target.addEventListener('mouseleave', () => body.classList.remove('cursor-hover'));
+        });
 
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="experience">
+        // Theme Toggle
+        const themeBtn = document.getElementById('theme-btn');
+        const themeIcon = document.getElementById('theme-icon');
 
-    <div class="exp">
-      <h3>Teaching Assistant – Informatics Engineering, UTM</h3>
-      <p>WargaLab | 2025 - Now</p>
-      <p>Created responsive and interactive web pages using HTML, CSS, and JS.</p>
-    </div>
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            themeIcon.setAttribute('data-lucide', newTheme === 'dark' ? 'sun' : 'moon');
+            lucide.createIcons();
+        });
 
-    <div class="exp">
-      <h3>Creator & Developer – Asrama Management Website</h3>
-      <p>Asrama UTM | 2025</p>
-      <p>Designed and developed a web-based dormitory management system including 
-      attendance, activity management, photo documentation, admin dashboard, 
-      and participant validation using PHP, MySQL, HTML, CSS, and JavaScript.</p>
-    </div>
+        // Clock
+        function updateTime() {
+            document.getElementById('current-time').textContent = new Date().toLocaleTimeString('en-US', { 
+                hour: '2-digit', minute: '2-digit', hour12: false 
+            });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
 
-    <div class="exp">
-      <h3>3rd Place – GEMASTIK Software Development (UTM)</h3>
-      <p>2025</p>
-      <p>Developed fast and minimalist websites for SMEs.</p>
-    </div>
+        // Reveal animations & Skill bars
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                    
+                    // Specific logic for skill bars
+                    const bars = entry.target.querySelectorAll('.skill-bar-fill');
+                    bars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-percent');
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
 
-    <div class="exp">
-      <h3>3rd Place – Problem Solving Competition (FAST UTM)</h3>
-      <p>2024</p>
-      <p>Contributed to frontend open-source projects.</p>
-    </div>
-
-    <div class="exp">
-      <h3>Owner & Creator – Topupkuy Application</h3>
-      <p>2020–2021</p>
-      <p>Made a simple digital top-up platform for fast transactions.</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-
-    <div class="skill-bar">
-      <span>IT & Programming Education</span>
-      <div class="bar"><div class="fill" style="width:90%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-      <span>Problem Solving & Logical Thinking</span>
-      <div class="bar"><div class="fill" style="width:90%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-      <span>Web Development (HTML, CSS, JS, PHP)</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-      <span>UI/UX Design</span>
-      <div class="bar"><div class="fill" style="width:65%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-      <span>Database & API Basics</span>
-      <div class="bar"><div class="fill" style="width:50%"></div></div>
-    </div>
-
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:gua@alfarabi.my.id">gua@alfarabi.my.id</a></p>
-  <p>Instagram: <a href="https://instagram.com/al.frabi.s">instagram.com/al.frabi.s</a></p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/alfarabis">linkedin.com/in/alfarabis</a></p>
-  <p>GitHub: <a href="https://github.com/mohammadalfarabi">github.com/mohammadalfarabi</a></p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Al Farabi Sidqi | <a href="#">alfarabi.my.id</a></p>
-</footer>
-
-<button id="backToTop">↑ Top</button>
-
-<!-- LINK JS -->
-<script src="script.js"></script>
-
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(20px)";
+            section.style.transition = "all 0.8s ease-out";
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
