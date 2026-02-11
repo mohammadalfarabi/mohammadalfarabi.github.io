@@ -267,6 +267,28 @@
             letter-spacing: 0.05em;
         }
 
+/* --- PROJECT IMAGES --- */
+.project-image {
+    width: 100%;
+    height: 200px; /* Atur tinggi sesuai kebutuhan */
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar akan mengisi area tanpa distorsi */
+    transition: transform 0.3s ease;
+    filter: grayscale(80%);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05); /* Efek zoom tipis saat hover */
+    filter: grayscale(0%); /* Gambar menjadi berwarna saat hover */
+}
+
         .project-link-item:hover { color: var(--accent); }
 
         /* --- TIMELINE --- */
@@ -292,3 +314,4 @@
             #cursor-dot, #cursor-outline { display: none; }
             * { cursor: auto; }
         }
+
