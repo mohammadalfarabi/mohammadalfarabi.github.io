@@ -1,69 +1,71 @@
-        lucide.createIcons();
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
-        // Custom Cursor
-        const dot = document.getElementById('cursor-dot');
-        const outline = document.getElementById('cursor-outline');
-        const body = document.body;
-
-        window.addEventListener('mousemove', (e) => {
-            dot.style.left = `${e.clientX}px`;
-            dot.style.top = `${e.clientY}px`;
-            dot.style.transform = `translate(-50%, -50%)`;
-
-            outline.animate({
-                left: `${e.clientX}px`,
-                top: `${e.clientY}px`
-            }, { duration: 500, fill: "forwards" });
-            
-            outline.style.transform = `translate(-50%, -50%)`;
-        });
-
-        const hoverTargets = document.querySelectorAll('.hover-target, a, button');
-        hoverTargets.forEach(target => {
-            target.addEventListener('mouseenter', () => body.classList.add('cursor-hover'));
-            target.addEventListener('mouseleave', () => body.classList.remove('cursor-hover'));
-        });
-
-        // Theme Toggle
-        const themeBtn = document.getElementById('theme-btn');
-        const themeIcon = document.getElementById('theme-icon');
-
-        themeBtn.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            themeIcon.setAttribute('data-lucide', newTheme === 'dark' ? 'sun' : 'moon');
-            lucide.createIcons();
-        });
-
-        // Clock
-        function updateTime() {
-            document.getElementById('current-time').textContent = new Date().toLocaleTimeString('en-US', { 
-                hour: '2-digit', minute: '2-digit', hour12: false 
-            });
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Latar luar yang bersih */
+            color: #64748b;
+            overflow-x: hidden;
         }
-        setInterval(updateTime, 1000);
-        updateTime();
 
-        // Reveal animations & Skill bars
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                    
-                    // Specific logic for skill bars
-                    const bars = entry.target.querySelectorAll('.skill-bar-fill');
-                    bars.forEach(bar => {
-                        bar.style.width = bar.getAttribute('data-percent');
-                    });
-                }
-            });
-        }, { threshold: 0.1 });
+        /* Bingkai Utama dengan Garis Putus-Putus */
+        .main-container {
+            background-color: #ffffff;
+            border-left: 2px dashed #cbd5e1;
+            border-right: 2px dashed #cbd5e1;
+            min-height: 100vh;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = "0";
-            section.style.transform = "translateY(20px)";
-            section.style.transition = "all 0.8s ease-out";
-            observer.observe(section);
-        });
+        /* Dekorasi Samping untuk PC/Laptop */
+        .side-content {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc((100% - 600px) / 2);
+            padding: 0 40px;
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .side-content {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .side-left { left: 0; align-items: flex-end; }
+        .side-right { right: 0; align-items: flex-start; }
+
+        .section-padding {
+            padding: 60px 32px;
+        }
+
+        .divider-dashed {
+            border-top: 2px dashed #f1f5f9;
+            margin: 0 32px;
+        }
+
+        h1, h2, h3 {
+            color: #1e293b;
+            transition: transform 0.3s ease;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
