@@ -1,71 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Latar luar yang bersih */
-            color: #64748b;
-            overflow-x: hidden;
+// 1. Fungsi jam digital di header
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
         }
+        setInterval(updateTime, 1000);
+        updateTime();
 
-        /* Bingkai Utama dengan Garis Putus-Putus */
-        .main-container {
-            background-color: #ffffff;
-            border-left: 2px dashed #cbd5e1;
-            border-right: 2px dashed #cbd5e1;
-            min-height: 100vh;
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* Dekorasi Samping untuk PC/Laptop */
-        .side-content {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            width: calc((100% - 600px) / 2);
-            padding: 0 40px;
-            display: none;
-        }
-
-        @media (min-width: 1024px) {
-            .side-content {
-                display: flex;
-                flex-direction: column;
+        // 2. Efek Scroll Reveal (Elemen muncul saat digulir)
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
             }
         }
+        window.addEventListener("scroll", reveal);
+        // Jalankan sekali saat load
+        reveal();
 
-        .side-left { left: 0; align-items: flex-end; }
-        .side-right { right: 0; align-items: flex-start; }
-
-        .section-padding {
-            padding: 60px 32px;
-        }
-
-        .divider-dashed {
-            border-top: 2px dashed #f1f5f9;
-            margin: 0 32px;
-        }
-
-        h1, h2, h3 {
-            color: #1e293b;
-            transition: transform 0.3s ease;
-        }
-
-        .vertical-text {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg);
-        }
-
-        /* Reveal Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        // 3. Efek interaksi sederhana pada judul (mengikuti pergerakan mouse sedikit)
+        document.addEventListener("mousemove", (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            const titles = document.querySelectorAll('h1');
+            titles.forEach(title => {
+                title.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        });
