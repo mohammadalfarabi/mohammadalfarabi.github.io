@@ -5,305 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="img/img-2.png">
     <title>Mohammad Al Farabi Sidqi | Portfolio</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body data-theme="dark">
+<body class="antialiased">
 
-    <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
+    <!-- Konten Samping Kiri (Hanya muncul di Laptop/PC) -->
+    <aside class="side-content side-left">
+        <div class="vertical-text text-[10px] uppercase tracking-[0.5em] font-bold text-slate-300">
+            Mohammad Al Farabi Sidqi
+        </div>
+        <div class="h-24 w-[2px] bg-slate-200 mt-8"></div>
+    </aside>
 
-    <div class="container">
-        <header>
-            <nav>
-                <a href="#" class="logo">MOHAMMAD AL FARABI S.</a>
-                <div class="nav-right">
-                    <ul class="nav-links">
-                        <li><a href="#about" class="hover-target">About</a></li>
-                        <li><a href="#projects" class="hover-target">Projects</a></li>
-                        <li><a href="#experience" class="hover-target">Experience</a></li>
-                        <li><a href="#skills" class="hover-target">Skills</a></li>
-                        <li><a href="#contact" class="hover-target">Contact</a></li>
-                    </ul>
-                    <button class="theme-toggle hover-target" id="theme-btn">
-                        <i data-lucide="sun" id="theme-icon"></i>
-                    </button>
-                    <div class="mono" id="current-time">00:00</div>
-                </div>
-            </nav>
+    <!-- Konten Samping Kanan (Hanya muncul di Laptop/PC) -->
+    <aside class="side-content side-right">
+        <div class="flex flex-col space-y-6 text-slate-400">
+            <a href="https://github.com/mohammadalfarabi"" class="hover:text-slate-900 transition-colors"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/al.frabi.s" class="hover:text-slate-900 transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/alfarabis" class="hover:text-slate-900 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="h-24 w-[2px] bg-slate-200 mt-8"></div>
+    </aside>
+
+    <div class="main-container shadow-[0_0_50px_rgba(0,0,0,0.02)]">
+        <!-- Header -->
+        <header class="section-padding flex justify-between items-center pb-10">
+            <div class="font-bold tracking-tighter text-xl text-slate-900 cursor-pointer hover:scale-110 transition-transform">Al Farabi.</div>
+            <div class="flex space-x-4 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <span id="current-time">00:00</span>
+                <span class="text-slate-200">/</span>
+                <span>2026</span>
+            </div>
         </header>
 
-        <!-- HERO -->
-        <section class="hero" id="home" style="border-top: none;">
-            <div class="hero-content">
-                <span class="mono">IT Educator & Developer</span>
-                <h1>Mohammad Al Farabi Sidqi.</h1>
-                <p>Informatics Engineering student at UTM. I build logical, efficient digital solutions and help others understand how programming truly works.</p>
-                <div style="display: flex; gap: 20px;">
-                    <a href="#projects" class="btn hover-target">View Projects</a>
-                    <a href="#contact" class="btn hover-target" style="background: transparent; border: 1px solid var(--border); color: var(--text-main);">Let's Talk</a>
-                    <a href="https://drive.google.com/uc?export=download&id=1uBRXKV-yrTdty1A5jsQeohZJKM1i34Ad" class="btn hover-target">Curriculum Vitae</a>
-                </div>
-            </div>
-            <div class="profile-img-container">
-                <img src="img/img-2.png" alt="Portrait Al Farabi">
-            </div>
+        <!-- Hero -->
+        <section class="section-padding reveal">
+            <h1 class="text-5xl font-bold leading-[1.1] tracking-tighter mb-6">Mohammad <span class="text-slate-300">Al</span> Farabi Sidqi.</h1>
+            <p class="text-slate-500 leading-relaxed text-base max-w-md">
+                Hai! Saya Mohammad Al Farabi Sidqi, mahasiswa Teknik Informatika Universitas Trunodjoyo Madura (UTM).
+            </p>
         </section>
 
-        <!-- ABOUT -->
-        <section id="about">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <span class="mono">01 / Profile</span>
-            </div>
-            <div style="max-width: 800px;">
-                <p style="font-size: 1.2rem; margin-bottom: 20px;">Hi! I'm Mohammad Al Farabi Sidqi, an Informatics Engineering student at Universitas Trunodjoyo Madura (UTM).</p>
-                <p>I focus on helping students understand how programming truly works, starting from core logic to real-world implementation. Beyond teaching, I actively develop web-based projects and continuously learn new technologies to improve both my technical abilities and my effectiveness as an educator.</p>
-            </div>
+        <div class="divider-dashed"></div>
+
+        <!-- Pekerjaan -->
+        <section class="section-padding reveal">
+    <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-12">Karya / 01</h2>
+
+    <div class="space-y-16">
+        <div class="group cursor-default">
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                <a href="https://myasrama.my.id//" target="_blank" class="hover:underline">Online Attendance System</a>
+            </h3>
+            <p class="text-sm text-slate-500 leading-relaxed">Sistem absensi berbasis QR dengan dasbor waktu nyata untuk pelacakan institusional yang lancar.</p>
+        </div>
+
+        <div class="group cursor-default">
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                <a href="https://alfarabi.my.id/AkademikPrompt/" target="_blank" class="hover:underline">Akademik Prompt</a>
+            </h3>
+            <p class="text-sm text-slate-500 leading-relaxed">Sebuah situs web yang berisi kumpulan petunjuk AI untuk mendukung kegiatan akademik dan hobi.</p>
+        </div>
+
+        <div class="group cursor-default">
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                <a href="https://sched.alfarabi.my.id/" target="_blank" class="hover:underline">Activity Schedule Website</a>
+            </h3>
+            <p class="text-sm text-slate-500 leading-relaxed">Sebuah situs web yang menampilkan jadwal kegiatan selama 1 minggu.</p>
+        </div>
+
+        <div class="group cursor-default">
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                <a href="https://github.com/mohammadalfarabi/projeck-qna/" target="_blank" class="hover:underline">English Q&A Web</a>
+            </h3>
+            <p class="text-sm text-slate-500 leading-relaxed">Sebuah situs web tanya jawab untuk belajar bahasa Inggris, yang dikembangkan sebagai proyek matakuliah PAW yang berfokus pada interaksi komunitas.</p>
+        </div>
+
+        <div class="group cursor-default">
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                <a href="https://mohammadalfarabi.github.io/jany-poopy-long-neck/" target="_blank" class="hover:underline">Janny Poppy Long Neck</a>
+            </h3>
+            <p class="text-sm text-slate-500 leading-relaxed">Situs web yang tidak berguna, gulir, dapatkan poin, dan ubah menjadi pdf.</p>
+        </div>
+
+        <div class="group cursor-default">
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                <a href="https://mohammadalfarabi.github.io/biodata-infor24/" target="_blank" class="hover:underline">Batch 2024 Biodata</a>
+            </h3>
+            <p class="text-sm text-slate-500 leading-relaxed">Sebuah situs web direktori biodata yang sederhana namun efektif untuk angkatan Teknik Informatika 2024.</p>
+        </div>
+    </div>
+</section>
+
+        <div class="divider-dashed"></div>
+
+        <!-- Info -->
+        <section class="section-padding reveal">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-6">Tentang / 02</h2>
+            <p class="text-slate-600 leading-relaxed italic">
+                "Ilmu terbaik bukan yang sekadar dihafal, tapi yang kebermanfaatannya dirasakan sesama."
+            </p>
+            <p class="mt-4 text-sm text-slate-500">
+                Saya fokus membantu siswa memahami cara kerja pemrograman yang sebenarnya, mulai dari logika inti hingga implementasi di dunia nyata. Selain mengajar, saya aktif mengembangkan proyek berbasis web dan terus mempelajari teknologi baru untuk meningkatkan kemampuan teknis dan efektivitas saya sebagai pendidik.
+            </p>
         </section>
 
-        <!-- PROJECTS -->
-        <section id="projects">
-            <div class="section-header">
-                <h2>Projects</h2>
-                <span class="mono">02 / Selected Works</span>
-            </div>
-            <div class="project-grid">
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/prattd.png" alt="Online Attendance System">
-                    </div>
-                    <div class="project-info">
-                        <span class="mono">2025</span>
-                        <h3>Online Attendance System</h3>
-                        <p>A QR-based attendance system with a real-time dashboard for seamless institutional tracking.</p>
-                        <div class="project-links">
-                            <a href="https://myasrama.my.id//" target="_blank" class="project-link-item hover-target"><i data-lucide="external-link" size="18"></i> Visit Site</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/prakp.png" alt="Online Attendance System">
-                    </div>
-                    <div class="project-info">
-                        <span class="mono">2025</span>
-                        <h3>Akademik Prompt</h3>
-                        <p>A website containing a collection of AI prompts to support academics and hobbies.</p>
-                        <div class="project-links">
-                            <a href="https://alfarabi.my.id/AkademikPrompt/" target="_blank" class="project-link-item hover-target"><i data-lucide="external-link" size="18"></i> Visit Site</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="divider-dashed"></div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/prsch.png" alt="Online Attendance System">
-                    </div>
-                    <div class="project-info">
-                        <span class="mono">2025</span>
-                        <h3>Activity Schedule Website</h3>
-                        <p>A website that displays a schedule of activities for 1 week.</p>
-                        <div class="project-links">
-                            <a href="https://sched.alfarabi.my.id/" target="_blank" class="project-link-item hover-target"><i data-lucide="external-link" size="18"></i> Visit Site</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/prqna.png" alt="English Q&A Web">
-                    </div>
-                    <div class="project-info">
-                        <span class="mono">2024</span>
-                        <h3>English Q&A Web</h3>
-                        <p>A Q&A website for learning English, developed as a PAW course project focusing on community interaction.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/mohammadalfarabi/projeck-qna/" target="_blank" class="project-link-item hover-target"><i data-lucide="github" size="18"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/prjny.png" alt="Janny Poppy Long Neck">
-                    </div>
-                    <div class="project-info">
-                        <span class="mono">2024</span>
-                        <h3>Janny Poppy Long Neck</h3>
-                        <p>Useless website scroll get points and in confession become pdf.</p>
-                        <div class="project-links">
-                            <a href="https://mohammadalfarabi.github.io/jany-poopy-long-neck/" target="_blank" class="project-link-item hover-target"><i data-lucide="external-link" size="18"></i> Visit Silly Site</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/prbio.png" alt="Batch 2024 Biodata">
-                    </div>
-                    <div class="project-info">
-                        <span class="mono">2024</span>
-                        <h3>Batch 2024 Biodata</h3>
-                        <p>A simple yet effective biodata directory website for the Informatics Engineering 2024 cohort.</p>
-                        <div class="project-links">
-                            <a href="https://mohammadalfarabi.github.io/biodata-infor24/" target="_blank" class="project-link-item hover-target"><i data-lucide="external-link" size="18"></i> View Site</a>
-                        </div>
-                    </div>
+        <!-- Kontak -->
+        <section class="section-padding reveal">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-8">Kontak / 03</h2>
+            <div class="grid grid-cols-1 gap-6">
+                <a href="mailto:email@anda.com" class="text-lg font-bold text-slate-900 border-b-2 border-slate-100 pb-2 inline-block w-fit hover:border-slate-900 transition-all">
+                    gua@alfarabi.my.id
+                </a>
+                <div class="flex space-x-6 text-sm font-semibold uppercase tracking-widest text-slate-400">
+                    <a href="https://instagram.com/al.frabi.s" class="hover:text-slate-900">Instagram</a>
+                    <a href="https://github.com/mohammadalfarabi"" class="hover:text-slate-900">github</a>
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE -->
-        <section id="experience">
-            <div class="section-header">
-                <h2>Experience</h2>
-                <span class="mono">03 / Career Path</span>
-            </div>
-
-            <div class="timeline-item">
-                <span class="mono">2025 — Now</span>
-                <div>
-                    <h3>Computer Laboratory Admin</h3>
-                    <h4>WargaLab | Informatics Engineering, UTM</h4>
-                    <p>Managing computer laboratories and servers.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <span class="mono">2025 — Now</span>
-                <div>
-                    <h3>Teaching Assistant</h3>
-                    <h4>WargaLab | Informatics Engineering, UTM</h4>
-                    <p>Created responsive and interactive web pages using HTML, CSS, and JS. Mentoring students in core web technologies.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <span class="mono">2025</span>
-                <div>
-                    <h3>Creator & Developer</h3>
-                    <h4>Asrama Management Website | UTM</h4>
-                    <p>Designed and developed a digital dormitory system including attendance, activity logs, and admin dashboard using PHP & MySQL.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <span class="mono">2025</span>
-                <div>
-                    <h3>3rd Place</h3>
-                    <h4>GEMASTIK Software Development (UTM)</h4>
-                    <p>Developed fast and minimalist website solutions tailored for Small and Medium Enterprises (SMEs).</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <span class="mono">2025</span>
-                <div>
-                    <h3>3rd Place</h3>
-                    <h4>Programming Problem Solving</h4>
-                    <p>Competition for solving complex program problems at UTM</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <span class="mono">2020 — 2021</span>
-                <div>
-                    <h3>Owner & Creator</h3>
-                    <h4>Topupkuy Application</h4>
-                    <p>Built a digital top-up platform focused on fast transactions and user simplicity during the early stages of my coding journey.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills">
-            <div class="section-header">
-                <h2>Skills</h2>
-                <span class="mono">04 / Expertise</span>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <span class="skill-label">IT & Programming Education</span>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-label">Problem Solving & Logic</span>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-label">Web Dev (HTML, CSS, JS, PHP)</span>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="70%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-label">UI/UX Design</span>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="65%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-label">Database & API Basics</span>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="50%"></div></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact">
-            <div class="contact-area">
-                <span class="mono">Connect with me</span>
-                <h2>Have a question or a project?</h2>
-                
-                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
-                    <a href="https://wa.me/62882010103257" target="_blank" class="btn hover-target" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white;">
-                        <i data-lucide="phone"></i> WhatsApp
-                    </a>
-                    
-                    <a href="mailto:gua@alfarabi.my.id" class="btn hover-target" style="display: inline-flex; align-items: center; gap: 10px;">
-                        <i data-lucide="mail"></i> gua@alfarabi.my.id
-                    </a>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://instagram.com/al.frabi.s" target="_blank" class="hover-target"><i data-lucide="instagram"></i></a>
-                    <a href="https://linkedin.com/in/alfarabis" target="_blank" class="hover-target"><i data-lucide="linkedin"></i></a>
-                    <a href="https://github.com/mohammadalfarabi" target="_blank" class="hover-target"><i data-lucide="github"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <div class="container">
-                <p>&copy; 2025 Mohammad Al Farabi Sidqi | Made with logic and aesthetic.</p>
-            </div>
+        <!-- Footer -->
+        <footer class="section-padding py-20 border-t-2 border-dashed border-slate-100 text-center">
+            <p class="text-[9px] text-slate-300 uppercase tracking-[0.5em]">&copy; 2025 Mohammad Al Farabi Sidqi</p>
         </footer>
     </div>
     <script src="script.js"></script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
