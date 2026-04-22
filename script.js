@@ -1,4 +1,4 @@
-// 1. Fungsi jam digital di header
+
         function updateTime() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
