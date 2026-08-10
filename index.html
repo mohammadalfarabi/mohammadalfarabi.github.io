@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="img/img-2.png">
-    <title>Mohammad Al Farabi Sidqi | Portfolio</title>
+    
+    <!-- SEO & Metadata -->
+    <title>Mohammad Al Farabi Sidqi | Full-Stack Developer & Educator</title>
+    <meta name="description" content="Portofolio Mohammad Al Farabi Sidqi - Mahasiswa Teknik Informatika UTM, Full-Stack Developer, dan Pengembang Web Application.">
+    <meta name="keywords" content="Mohammad Al Farabi Sidqi, Al Farabi, Web Developer, UTM, Teknik Informatika, Portfolio">
+    <meta name="author" content="Mohammad Al Farabi Sidqi">
 
+    <!-- Open Graph / Social Media Preview (Penting untuk Personal Branding) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfarabi.my.id/">
+    <meta property="og:title" content="Mohammad Al Farabi Sidqi | Portfolio">
+    <meta property="og:description" content="Explore projects, web applications, and insights by Mohammad Al Farabi Sidqi.">
+    <meta property="og:image" content="https://alfarabi.my.id/img/img-2.png">
+
+    <!-- Tailwind CSS & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body class="antialiased">
 
-    <!-- Konten Samping Kiri (Hanya muncul di Laptop/PC) -->
+    <!-- Konten Samping Kiri (Desktop) -->
     <aside class="side-content side-left">
         <div class="vertical-text text-[10px] uppercase tracking-[0.5em] font-bold text-slate-300">
             Mohammad Al Farabi Sidqi
@@ -21,20 +33,22 @@
         <div class="h-24 w-[2px] bg-slate-200 mt-8"></div>
     </aside>
 
-    <!-- Konten Samping Kanan (Hanya muncul di Laptop/PC) -->
+    <!-- Konten Samping Kanan (Desktop) -->
     <aside class="side-content side-right">
         <div class="flex flex-col space-y-6 text-slate-400">
-            <a href="https://github.com/mohammadalfarabi"" class="hover:text-slate-900 transition-colors"><i class="fab fa-github"></i></a>
-            <a href="https://instagram.com/al.frabi.s" class="hover:text-slate-900 transition-colors"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com/in/alfarabis" class="hover:text-slate-900 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/mohammadalfarabi" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/al.frabi.s" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/alfarabis" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <div class="h-24 w-[2px] bg-slate-200 mt-8"></div>
     </aside>
 
+    <!-- Container Utama -->
     <div class="main-container shadow-[0_0_50px_rgba(0,0,0,0.02)]">
+        
         <!-- Header -->
         <header class="section-padding flex justify-between items-center pb-10">
-            <div class="font-bold tracking-tighter text-xl text-slate-900 cursor-pointer hover:scale-110 transition-transform">Al Farabi.</div>
+            <a href="#" class="font-bold tracking-tighter text-xl text-slate-900 hover:scale-105 transition-transform">Al Farabi.</a>
             <div class="flex space-x-4 text-[10px] font-bold uppercase tracking-widest text-slate-400">
                 <span id="current-time">00:00</span>
                 <span class="text-slate-200">/</span>
@@ -42,100 +56,125 @@
             </div>
         </header>
 
-        <!-- Hero -->
+        <!-- Hero Section -->
         <section class="section-padding reveal">
             <h1 class="text-5xl font-bold leading-[1.1] tracking-tighter mb-6">Mohammad <span class="text-slate-300">Al</span> Farabi Sidqi.</h1>
             <p class="text-slate-500 leading-relaxed text-base max-w-md">
-                Hai! Saya Mohammad Al Farabi Sidqi, mahasiswa Teknik Informatika Universitas Trunodjoyo Madura (UTM).
+                Mahasiswa Teknik Informatika Universitas Trunojoyo Madura (UTM) & Full-Stack Developer. Berfokus pada pengembangan sistem web yang scalable dan edukasi pemrograman logis.
             </p>
+            <!-- Badge Expertise -->
+            <div class="flex flex-wrap gap-2 mt-6">
+                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[11px] text-slate-500 rounded">PHP / Tailwind</span>
+                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[11px] text-slate-500 rounded">JavaScript / Python</span>
+                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[11px] text-slate-500 rounded">OpenGL / C++</span>
+            </div>
         </section>
 
         <div class="divider-dashed"></div>
 
-        <!-- Pekerjaan -->
+        <!-- Section Projects -->
         <section class="section-padding reveal">
-    <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-12">Karya / 01</h2>
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-12">Karya & Proyek / 01</h2>
 
-    <div class="space-y-16">
-        <div class="group cursor-default">
-            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                <a href="https://myasrama.my.id//" target="_blank" class="hover:underline">Online Attendance System</a>
-            </h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Sistem absensi berbasis QR dengan dasbor waktu nyata untuk pelacakan institusional yang lancar.</p>
-        </div>
+            <div class="space-y-12">
+                <article class="group">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                        <a href="https://myasrama.my.id/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
+                            Online Attendance System
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Sistem absensi berbasis QR Code dengan dashboard *real-time* untuk efisiensi pelacakan kehadiran institusional.</p>
+                </article>
 
-        <div class="group cursor-default">
-            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                <a href="https://alfarabi.my.id/AkademikPrompt/" target="_blank" class="hover:underline">Akademik Prompt</a>
-            </h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Sebuah situs web yang berisi kumpulan petunjuk AI untuk mendukung kegiatan akademik dan hobi.</p>
-        </div>
+                <article class="group">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                        <a href="https://alfarabi.my.id/AkademikPrompt/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
+                            Akademik Prompt
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Koleksi kurasi prompt AI khusus untuk mengoptimalkan alur kerja akademik, riset, dan produktivitas harian.</p>
+                </article>
 
-        <div class="group cursor-default">
-            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                <a href="https://sched.alfarabi.my.id/" target="_blank" class="hover:underline">Activity Schedule Website</a>
-            </h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Sebuah situs web yang menampilkan jadwal kegiatan selama 1 minggu.</p>
-        </div>
+                <article class="group">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                        <a href="https://sched.alfarabi.my.id/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
+                            Activity Schedule Website
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Platform manajemen dan visualisasi jadwal kegiatan mingguan yang ringkas dan responsif.</p>
+                </article>
 
-        <div class="group cursor-default">
-            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                <a href="https://github.com/mohammadalfarabi/projeck-qna/" target="_blank" class="hover:underline">English Q&A Web</a>
-            </h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Sebuah situs web tanya jawab untuk belajar bahasa Inggris, yang dikembangkan sebagai proyek matakuliah PAW yang berfokus pada interaksi komunitas.</p>
-        </div>
+                <article class="group">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                        <a href="https://github.com/mohammadalfarabi/projeck-qna/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
+                            English Q&A Web
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Aplikasi tanya-jawab komunitas interaktif untuk pembelajaran Bahasa Inggris, dibangun dengan arsitektur web modern.</p>
+                </article>
 
-        <div class="group cursor-default">
-            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                <a href="https://mohammadalfarabi.github.io/jany-poopy-long-neck/" target="_blank" class="hover:underline">Janny Poppy Long Neck</a>
-            </h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Situs web yang tidak berguna, gulir, dapatkan poin, dan ubah menjadi pdf.</p>
-        </div>
+                <article class="group">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                        <a href="https://mohammadalfarabi.github.io/jany-poopy-long-neck/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
+                            Janny Poppy Long Neck
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Eksperimen web interaktif dan *fun canvas tool* yang memungkinkan konversi aktivitas pengguna menjadi berkas PDF.</p>
+                </article>
 
-        <div class="group cursor-default">
-            <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                <a href="https://mohammadalfarabi.github.io/biodata-infor24/" target="_blank" class="hover:underline">Batch 2024 Biodata</a>
-            </h3>
-            <p class="text-sm text-slate-500 leading-relaxed">Sebuah situs web direktori biodata yang sederhana namun efektif untuk angkatan Teknik Informatika 2024.</p>
-        </div>
-    </div>
-</section>
+                <article class="group">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
+                        <a href="https://mohammadalfarabi.github.io/biodata-infor24/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
+                            Batch 2024 Biodata Directory
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Direktori terstruktur untuk data mahasiswa Teknik Informatika angkatan 2024 yang mudah diakses dan terorganisasi.</p>
+                </article>
+            </div>
+        </section>
 
         <div class="divider-dashed"></div>
 
-        <!-- Info -->
+        <!-- About Section -->
         <section class="section-padding reveal">
             <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-6">Tentang / 02</h2>
-            <p class="text-slate-600 leading-relaxed italic">
+            <blockquote class="text-slate-700 leading-relaxed italic border-l-2 border-slate-300 pl-4 my-4">
                 "Ilmu terbaik bukan yang sekadar dihafal, tapi yang kebermanfaatannya dirasakan sesama."
-            </p>
-            <p class="mt-4 text-sm text-slate-500">
-                Saya fokus membantu siswa memahami cara kerja pemrograman yang sebenarnya, mulai dari logika inti hingga implementasi di dunia nyata. Selain mengajar, saya aktif mengembangkan proyek berbasis web dan terus mempelajari teknologi baru untuk meningkatkan kemampuan teknis dan efektivitas saya sebagai pendidik.
+            </blockquote>
+            <p class="text-sm text-slate-500 leading-relaxed">
+                Saya berfokus membantu membimbing pemahaman fundamental pemrograman—mulai dari logika algoritma inti hingga penerapan aplikasi nyata. Selain mengajar, saya aktif merancang arsitektur sistem berbasis web, mengeksplorasi grafika komputer, serta terus mendalami teknologi baru untuk menghadirkan solusi bernilai tinggi.
             </p>
         </section>
 
         <div class="divider-dashed"></div>
 
-        <!-- Kontak -->
+        <!-- Contact Section -->
         <section class="section-padding reveal">
             <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-8">Kontak / 03</h2>
             <div class="grid grid-cols-1 gap-6">
-                <a href="mailto:email@anda.com" class="text-lg font-bold text-slate-900 border-b-2 border-slate-100 pb-2 inline-block w-fit hover:border-slate-900 transition-all">
+                <a href="mailto:gua@alfarabi.my.id" class="text-lg font-bold text-slate-900 border-b-2 border-slate-100 pb-2 inline-block w-fit hover:border-slate-900 transition-all">
                     gua@alfarabi.my.id
                 </a>
                 <div class="flex space-x-6 text-sm font-semibold uppercase tracking-widest text-slate-400">
-                    <a href="https://instagram.com/al.frabi.s" class="hover:text-slate-900">Instagram</a>
-                    <a href="https://github.com/mohammadalfarabi"" class="hover:text-slate-900">github</a>
+                    <a href="https://instagram.com/al.frabi.s" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors">Instagram</a>
+                    <a href="https://github.com/mohammadalfarabi" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/alfarabis" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors">LinkedIn</a>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="section-padding py-20 border-t-2 border-dashed border-slate-100 text-center">
-            <p class="text-[9px] text-slate-300 uppercase tracking-[0.5em]">&copy; 2025 Mohammad Al Farabi Sidqi</p>
+        <footer class="section-padding py-16 border-t-2 border-dashed border-slate-100 text-center">
+            <p class="text-[9px] text-slate-300 uppercase tracking-[0.5em]">&copy; 2026 Mohammad Al Farabi Sidqi. All rights reserved.</p>
         </footer>
     </div>
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
 </body>
 </html>
