@@ -57,35 +57,50 @@ h1, h2, h3 {
     transform: rotate(180deg);
 }
 
-/* Kartu Foto Profil Monokrom (Abu-Putih Minimalis) */
-.profile-card-container {
-    width: 100%;
-}
-
-.profile-photo-wrapper {
+/* --- Hero Section dengan Foto Background Abu-Putih --- */
+.hero-section {
     position: relative;
-    width: 100%;
-    height: 220px; /* Tinggi kartu foto */
-    border: 2px dashed #cbd5e1;
-    border-radius: 8px;
+    padding: 60px 32px;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
-    background-color: #f1f5f9; /* Background abu-abu muda */
 }
 
-.profile-photo {
+/* Foto Latar Belakang */
+.hero-bg-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    /* Efek Filter Abu-Putih */
-    filter: grayscale(100%) contrast(105%) brightness(102%);
-    transition: filter 0.3s ease, transform 0.3s ease;
+    object-position: center 20%;
+    /* Mengubah foto menjadi Monokrom Abu-Putih Tajam */
+    filter: grayscale(100%) contrast(115%) brightness(105%);
+    z-index: 1;
 }
 
-/* Efek sedikit berwarna jika di-hover */
-.profile-photo-wrapper:hover .profile-photo {
-    filter: grayscale(30%) contrast(100%);
-    transform: scale(1.02);
+/* Lapisan Warna Gradasi Abu-Putih (Supaya Teks Tetap Jelas Dibaca) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0.92) 0%, 
+        rgba(255, 255, 255, 0.82) 60%, 
+        rgba(255, 255, 255, 0.5) 100%
+    );
+    z-index: 2;
+}
+
+/* Konten Teks di Atas Overlay */
+.hero-content {
+    position: relative;
+    z-index: 3;
 }
 
 /* Animasi Elemen Scroll Reveal */
