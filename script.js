@@ -1,35 +1,40 @@
+// 1. Update Jam Real-time
+function updateTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const timeElement = document.getElementById('current-time');
+    if (timeElement) {
+        timeElement.textContent = `${hours}:${minutes}`;
+    }
+}
+setInterval(updateTime, 1000);
+updateTime();
 
-        function updateTime() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
+// 2. Scroll Reveal Animation
+function reveal() {
+    const reveals = document.querySelectorAll(".reveal");
+    const windowHeight = window.innerHeight;
+    const elementVisible = 100;
+
+    reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+            el.classList.add("active");
         }
-        setInterval(updateTime, 1000);
-        updateTime();
+    });
+}
+window.addEventListener("scroll", reveal);
+document.addEventListener("DOMContentLoaded", reveal);
 
-        // 2. Efek Scroll Reveal (Elemen muncul saat digulir)
-        function reveal() {
-            const reveals = document.querySelectorAll(".reveal");
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveals[i].getBoundingClientRect().top;
-                const elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        // Jalankan sekali saat load
-        reveal();
-
-        // 3. Efek interaksi sederhana pada judul (mengikuti pergerakan mouse sedikit)
-        document.addEventListener("mousemove", (e) => {
-            const x = (window.innerWidth / 2 - e.pageX) / 50;
-            const y = (window.innerHeight / 2 - e.pageY) / 50;
-            const titles = document.querySelectorAll('h1');
-            titles.forEach(title => {
-                title.style.transform = `translateX(${x}px) translateY(${y}px)`;
-            });
+// 3. Smooth Mouse Parallax Effect (Desktop only)
+if (window.innerWidth > 768) {
+    document.addEventListener("mousemove", (e) => {
+        const x = (window.innerWidth / 2 - e.clientX) / 60;
+        const y = (window.innerHeight / 2 - e.clientY) / 60;
+        const titles = document.querySelectorAll('h1');
+        titles.forEach(title => {
+            title.style.transform = `translate3d(${x}px, ${y}px, 0)`;
         });
+    });
+}
