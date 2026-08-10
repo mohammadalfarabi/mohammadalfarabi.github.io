@@ -56,34 +56,39 @@
             </div>
         </header>
 
-        <!-- Hero Section -->
-        <section class="section-padding reveal">
-            <h1 class="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tighter mb-6">
-                Mohammad <span class="text-slate-300">Al</span> Farabi Sidqi.
-            </h1>
-            <p class="text-slate-500 leading-relaxed text-sm sm:text-base max-w-md">
-                Mahasiswa Teknik Informatika Universitas Trunojoyo Madura (UTM) & Full-Stack Web Developer. Berfokus pada pembangunan sistem web terstruktur, otomatisasi, dan edukasi logika pemrograman.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-6">
-                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">PHP & Tailwind</span>
-                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">JavaScript & Python</span>
-                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">C++ & OpenGL</span>
+        <!-- Hero Section dengan Background Foto Transparan Abu-Putih -->
+        <section class="section-padding reveal relative overflow-hidden">
+            <!-- Foto Watermark Background -->
+            <!-- Pastikan mengganti 'img/img-2.png' dengan path foto diri berformat PNG tanpa background -->
+            <img src="img/img-2.png" alt="Mohammad Al Farabi Sidqi" class="hero-bg-photo">
+
+            <div class="relative z-10">
+                <h1 class="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tighter mb-6">
+                    Mohammad <span class="text-slate-300">Al</span> Farabi Sidqi.
+                </h1>
+                <p class="text-slate-500 leading-relaxed text-sm sm:text-base max-w-md">
+                    Mahasiswa Teknik Informatika Universitas Trunojoyo Madura (UTM) & Full-Stack Web Developer. Berfokus pada pembangunan sistem web terstruktur, otomatisasi, dan edukasi logika pemrograman.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-6">
+                    <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">PHP & Tailwind</span>
+                    <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">JavaScript & Python</span>
+                    <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">C++ & OpenGL</span>
+                </div>
             </div>
         </section>
 
         <div class="divider-dashed"></div>
 
-        <!-- Section Projects (Grid Minimalis) -->
+        <!-- Section Projects (Grid Minimalis 2-Kolom) -->
         <section class="section-padding reveal">
             <div class="flex justify-between items-baseline mb-8">
                 <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300">Portofolio & Proyek / 01</h2>
                 <span class="text-[10px] font-semibold text-slate-400">8 Proyek</span>
             </div>
 
-            <!-- Block Grid Minimalis (Dua Kolom) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 
-                <!-- Proyek 1: News Portal -->
+                <!-- Proyek 1: Portal Berita -->
                 <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
                     <div>
                         <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
@@ -240,12 +245,11 @@
 
         <div class="divider-dashed"></div>
 
-        <!-- Section Pengalaman (Minimalis Timeline) -->
+        <!-- Section Pengalaman (Timeline Minimalis) -->
         <section class="section-padding reveal">
             <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-8">Pengalaman & Peran / 02</h2>
             
             <div class="space-y-6">
-                <!-- Pengalaman 1 -->
                 <div class="p-4 border-l-2 border-dashed border-slate-300 pl-4 space-y-1">
                     <div class="flex justify-between items-start">
                         <h3 class="font-bold text-slate-900 text-sm">Full-Stack Developer & Admin Web</h3>
@@ -253,15 +257,14 @@
                     </div>
                     <p class="text-xs font-semibold text-slate-600">Pengembang Sistem Asrama & Portal Informasi</p>
                     <p class="text-xs text-slate-500 leading-relaxed pt-1">
-                        Merancang, mengembangkan, dan memelihara berbagai infrastruktur web seperti sistem presensi QR, portal berita berita asrama, hingga sistem pelaporan lingkungan KESHA.
+                        Merancang, mengembangkan, dan memelihara berbagai infrastruktur web seperti sistem presensi QR, portal berita asrama, hingga sistem pelaporan lingkungan KESHA.
                     </p>
                 </div>
 
-                <!-- Pengalaman 2 -->
                 <div class="p-4 border-l-2 border-dashed border-slate-300 pl-4 space-y-1">
                     <div class="flex justify-between items-start">
                         <h3 class="font-bold text-slate-900 text-sm">Mentor / Educating Assistant</h3>
-                        <span class="text-[10px] font-mono text-slate-400 font-normal">Akademik & Komunitas</span>
+                        <span class="text-[10px] font-mono text-slate-400">Akademik & Komunitas</span>
                     </div>
                     <p class="text-xs font-semibold text-slate-600">Pendamping Pemrograman & Logika Komputer</p>
                     <p class="text-xs text-slate-500 leading-relaxed pt-1">
