@@ -6,19 +6,19 @@
     <link rel="icon" type="image/png" href="img/img-2.png">
     
     <!-- SEO & Metadata -->
-    <title>Mohammad Al Farabi Sidqi | Full-Stack Developer & Educator</title>
-    <meta name="description" content="Portofolio Mohammad Al Farabi Sidqi - Mahasiswa Teknik Informatika UTM, Full-Stack Developer, dan Pengembang Web Application.">
-    <meta name="keywords" content="Mohammad Al Farabi Sidqi, Al Farabi, Web Developer, UTM, Teknik Informatika, Portfolio">
+    <title>Mohammad Al Farabi Sidqi | Portfolio</title>
+    <meta name="description" content="Portofolio Mohammad Al Farabi Sidqi - Full-Stack Developer, Mahasiswa Teknik Informatika UTM, dan Pengembang Aplikasi Web.">
+    <meta name="keywords" content="Mohammad Al Farabi Sidqi, Al Farabi, Web Developer, UTM, Portfolio, Full-Stack">
     <meta name="author" content="Mohammad Al Farabi Sidqi">
 
-    <!-- Open Graph / Social Media Preview (Penting untuk Personal Branding) -->
+    <!-- Open Graph / Social Media Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alfarabi.my.id/">
     <meta property="og:title" content="Mohammad Al Farabi Sidqi | Portfolio">
-    <meta property="og:description" content="Explore projects, web applications, and insights by Mohammad Al Farabi Sidqi.">
+    <meta property="og:description" content="Kumpulan karya, proyek web, dan pengalaman pengembangan sistem oleh Mohammad Al Farabi Sidqi.">
     <meta property="og:image" content="https://alfarabi.my.id/img/img-2.png">
 
-    <!-- Tailwind CSS & Icons -->
+    <!-- Tailwind CSS & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -43,7 +43,7 @@
         <div class="h-24 w-[2px] bg-slate-200 mt-8"></div>
     </aside>
 
-    <!-- Container Utama -->
+    <!-- Main Container -->
     <div class="main-container shadow-[0_0_50px_rgba(0,0,0,0.02)]">
         
         <!-- Header -->
@@ -58,110 +58,242 @@
 
         <!-- Hero Section -->
         <section class="section-padding reveal">
-            <h1 class="text-5xl font-bold leading-[1.1] tracking-tighter mb-6">Mohammad <span class="text-slate-300">Al</span> Farabi Sidqi.</h1>
-            <p class="text-slate-500 leading-relaxed text-base max-w-md">
-                Mahasiswa Teknik Informatika Universitas Trunojoyo Madura (UTM) & Full-Stack Developer. Berfokus pada pengembangan sistem web yang scalable dan edukasi pemrograman logis.
+            <h1 class="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tighter mb-6">
+                Mohammad <span class="text-slate-300">Al</span> Farabi Sidqi.
+            </h1>
+            <p class="text-slate-500 leading-relaxed text-sm sm:text-base max-w-md">
+                Mahasiswa Teknik Informatika Universitas Trunojoyo Madura (UTM) & Full-Stack Web Developer. Berfokus pada pembangunan sistem web terstruktur, otomatisasi, dan edukasi logika pemrograman.
             </p>
-            <!-- Badge Expertise -->
             <div class="flex flex-wrap gap-2 mt-6">
-                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[11px] text-slate-500 rounded">PHP / Tailwind</span>
-                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[11px] text-slate-500 rounded">JavaScript / Python</span>
-                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[11px] text-slate-500 rounded">OpenGL / C++</span>
+                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">PHP & Tailwind</span>
+                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">JavaScript & Python</span>
+                <span class="px-2.5 py-1 border border-dashed border-slate-300 text-[10px] text-slate-500 rounded font-semibold uppercase tracking-wider">C++ & OpenGL</span>
             </div>
         </section>
 
         <div class="divider-dashed"></div>
 
-        <!-- Section Projects -->
+        <!-- Section Projects (Grid Minimalis) -->
         <section class="section-padding reveal">
-            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-12">Karya & Proyek / 01</h2>
+            <div class="flex justify-between items-baseline mb-8">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300">Portofolio & Proyek / 01</h2>
+                <span class="text-[10px] font-semibold text-slate-400">8 Proyek</span>
+            </div>
 
-            <div class="space-y-12">
-                <article class="group">
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                        <a href="https://myasrama.my.id/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
-                            Online Attendance System
-                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">Sistem absensi berbasis QR Code dengan dashboard *real-time* untuk efisiensi pelacakan kehadiran institusional.</p>
+            <!-- Block Grid Minimalis (Dua Kolom) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <!-- Proyek 1: News Portal -->
+                <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
+                            <a href="https://news.myasrama.my.id/" target="_blank" rel="noopener" class="flex items-center justify-between">
+                                Portal Berita Asrama
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-slate-900 transition-colors"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-2">
+                            Platform publikasi informasi dan berita terkini terintegrasi untuk penghuni asrama institusional.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                        <span>news.myasrama.my.id</span>
+                        <span>Web App</span>
+                    </div>
                 </article>
 
-                <article class="group">
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                        <a href="https://alfarabi.my.id/AkademikPrompt/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
-                            Akademik Prompt
-                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">Koleksi kurasi prompt AI khusus untuk mengoptimalkan alur kerja akademik, riset, dan produktivitas harian.</p>
+                <!-- Proyek 2: KESHA -->
+                <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
+                            <a href="#" class="flex items-center justify-between">
+                                KESHA (Kesehatan Asrama)
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-slate-900 transition-colors"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-2">
+                            Sistem pelaporan kebersihan dan kesehatan lingkungan asrama berbasis foto dan jadwal terstruktur.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                        <span>Internal System</span>
+                        <span>Dashboard</span>
+                    </div>
                 </article>
 
-                <article class="group">
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                        <a href="https://sched.alfarabi.my.id/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
-                            Activity Schedule Website
-                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">Platform manajemen dan visualisasi jadwal kegiatan mingguan yang ringkas dan responsif.</p>
+                <!-- Proyek 3: Attendance -->
+                <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
+                            <a href="https://myasrama.my.id/" target="_blank" rel="noopener" class="flex items-center justify-between">
+                                Online Attendance System
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-slate-900 transition-colors"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-2">
+                            Sistem pemindaian QR Code presensi waktu-nyata (real-time) dengan rekapitulasi data terpusat.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                        <span>myasrama.my.id</span>
+                        <span>QR System</span>
+                    </div>
                 </article>
 
-                <article class="group">
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                        <a href="https://github.com/mohammadalfarabi/projeck-qna/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
-                            English Q&A Web
-                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">Aplikasi tanya-jawab komunitas interaktif untuk pembelajaran Bahasa Inggris, dibangun dengan arsitektur web modern.</p>
+                <!-- Proyek 4: Akademik Prompt -->
+                <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
+                            <a href="https://alfarabi.my.id/AkademikPrompt/" target="_blank" rel="noopener" class="flex items-center justify-between">
+                                Akademik Prompt Library
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-slate-900 transition-colors"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-2">
+                            Koleksi kurasi prompt Kecerdasan Buatan (AI) terstruktur untuk efisiensi riset dan pengerjaan tugas akademik.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                        <span>alfarabi.my.id</span>
+                        <span>AI Tools</span>
+                    </div>
                 </article>
 
-                <article class="group">
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                        <a href="https://mohammadalfarabi.github.io/jany-poopy-long-neck/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
-                            Janny Poppy Long Neck
-                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">Eksperimen web interaktif dan *fun canvas tool* yang memungkinkan konversi aktivitas pengguna menjadi berkas PDF.</p>
+                <!-- Proyek 5: Activity Schedule -->
+                <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
+                            <a href="https://sched.alfarabi.my.id/" target="_blank" rel="noopener" class="flex items-center justify-between">
+                                Activity Schedule Web
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-slate-900 transition-colors"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-2">
+                            Aplikasi jadwal kegiatan mingguan yang interaktif dan responsif untuk manajemen agenda harian.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                        <span>sched.alfarabi.my.id</span>
+                        <span>Management</span>
+                    </div>
                 </article>
 
-                <article class="group">
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-400 transition-colors">
-                        <a href="https://mohammadalfarabi.github.io/biodata-infor24/" target="_blank" rel="noopener" class="hover:underline flex items-center gap-2">
-                            Batch 2024 Biodata Directory
-                            <i class="fas fa-arrow-up-right-from-square text-xs text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">Direktori terstruktur untuk data mahasiswa Teknik Informatika angkatan 2024 yang mudah diakses dan terorganisasi.</p>
+                <!-- Proyek 6: English Q&A -->
+                <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
+                            <a href="https://github.com/mohammadalfarabi/projeck-qna/" target="_blank" rel="noopener" class="flex items-center justify-between">
+                                English Q&A Community
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-slate-900 transition-colors"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-2">
+                            Platform tanya-jawab interaktif pembelajaran Bahasa Inggris berbasis komunitas (Proyek Mata Kuliah PAW).
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                        <span>GitHub Repository</span>
+                        <span>Community</span>
+                    </div>
                 </article>
+
+                <!-- Proyek 7: Janny Poppy Long Neck -->
+                <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
+                            <a href="https://mohammadalfarabi.github.io/jany-poopy-long-neck/" target="_blank" rel="noopener" class="flex items-center justify-between">
+                                Janny Poppy Long Neck
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-slate-900 transition-colors"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-2">
+                            Eksperimen kanvas interaktif unik yang mengonversi interaksi scroll pengguna menjadi berkas PDF.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                        <span>GitHub Pages</span>
+                        <span>Experiment</span>
+                    </div>
+                </article>
+
+                <!-- Proyek 8: Batch 2024 Biodata -->
+                <article class="p-4 border border-dashed border-slate-200 rounded-lg hover:border-slate-400 transition-all group flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 group-hover:text-slate-600 transition-colors mb-1 text-base">
+                            <a href="https://mohammadalfarabi.github.io/biodata-infor24/" target="_blank" rel="noopener" class="flex items-center justify-between">
+                                Informatics '24 Directory
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-300 group-hover:text-slate-900 transition-colors"></i>
+                            </a>
+                        </h3>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-2">
+                            Direktori profil dan biodata ringkas terstruktur untuk mahasiswa Teknik Informatika UTM angkatan 2024.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                        <span>GitHub Pages</span>
+                        <span>Directory</span>
+                    </div>
+                </article>
+
             </div>
         </section>
 
         <div class="divider-dashed"></div>
 
-        <!-- About Section -->
+        <!-- Section Pengalaman (Minimalis Timeline) -->
         <section class="section-padding reveal">
-            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-6">Tentang / 02</h2>
-            <blockquote class="text-slate-700 leading-relaxed italic border-l-2 border-slate-300 pl-4 my-4">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-8">Pengalaman & Peran / 02</h2>
+            
+            <div class="space-y-6">
+                <!-- Pengalaman 1 -->
+                <div class="p-4 border-l-2 border-dashed border-slate-300 pl-4 space-y-1">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-slate-900 text-sm">Full-Stack Developer & Admin Web</h3>
+                        <span class="text-[10px] font-mono text-slate-400">2025 - Sekarang</span>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-600">Pengembang Sistem Asrama & Portal Informasi</p>
+                    <p class="text-xs text-slate-500 leading-relaxed pt-1">
+                        Merancang, mengembangkan, dan memelihara berbagai infrastruktur web seperti sistem presensi QR, portal berita berita asrama, hingga sistem pelaporan lingkungan KESHA.
+                    </p>
+                </div>
+
+                <!-- Pengalaman 2 -->
+                <div class="p-4 border-l-2 border-dashed border-slate-300 pl-4 space-y-1">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-slate-900 text-sm">Mentor / Educating Assistant</h3>
+                        <span class="text-[10px] font-mono text-slate-400 font-normal">Akademik & Komunitas</span>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-600">Pendamping Pemrograman & Logika Komputer</p>
+                    <p class="text-xs text-slate-500 leading-relaxed pt-1">
+                        Membimbing mahasiswa/siswa dalam memahami konsep fundamental alur logika, pemecahan masalah (problem solving), dan implementasi pemograman web nyata.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider-dashed"></div>
+
+        <!-- Section Tentang -->
+        <section class="section-padding reveal">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-6">Tentang / 03</h2>
+            <blockquote class="text-slate-700 leading-relaxed italic border-l-2 border-slate-300 pl-4 my-4 text-xs sm:text-sm">
                 "Ilmu terbaik bukan yang sekadar dihafal, tapi yang kebermanfaatannya dirasakan sesama."
             </blockquote>
-            <p class="text-sm text-slate-500 leading-relaxed">
-                Saya berfokus membantu membimbing pemahaman fundamental pemrograman—mulai dari logika algoritma inti hingga penerapan aplikasi nyata. Selain mengajar, saya aktif merancang arsitektur sistem berbasis web, mengeksplorasi grafika komputer, serta terus mendalami teknologi baru untuk menghadirkan solusi bernilai tinggi.
+            <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                Fokus utama saya adalah menjembatani logika pemrograman inti dengan penerapannya di dunia nyata. Selain mengembangkan platform web produktif dan eksplorasi grafika komputer (OpenGL/C++), saya aktif membagikan ilmu untuk membantu sesama pembelajar memahami cara kerja sistem secara mendalam.
             </p>
         </section>
 
         <div class="divider-dashed"></div>
 
-        <!-- Contact Section -->
+        <!-- Section Kontak -->
         <section class="section-padding reveal">
-            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-8">Kontak / 03</h2>
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-300 mb-8">Kontak / 04</h2>
             <div class="grid grid-cols-1 gap-6">
                 <a href="mailto:gua@alfarabi.my.id" class="text-lg font-bold text-slate-900 border-b-2 border-slate-100 pb-2 inline-block w-fit hover:border-slate-900 transition-all">
                     gua@alfarabi.my.id
                 </a>
-                <div class="flex space-x-6 text-sm font-semibold uppercase tracking-widest text-slate-400">
+                <div class="flex space-x-6 text-xs font-semibold uppercase tracking-widest text-slate-400">
                     <a href="https://instagram.com/al.frabi.s" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors">Instagram</a>
                     <a href="https://github.com/mohammadalfarabi" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors">GitHub</a>
                     <a href="https://linkedin.com/in/alfarabis" target="_blank" rel="noopener" class="hover:text-slate-900 transition-colors">LinkedIn</a>
