@@ -57,22 +57,35 @@ h1, h2, h3 {
     transform: rotate(180deg);
 }
 
-/* Watermark Background Photo (Hero Section) */
-.hero-bg-photo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 240px;
+/* Kartu Foto Profil Monokrom (Abu-Putih Minimalis) */
+.profile-card-container {
+    width: 100%;
+}
+
+.profile-photo-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Tinggi kartu foto */
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f1f5f9; /* Background abu-abu muda */
+}
+
+.profile-photo {
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
-    /* Efek Monokrom Abu-Putih */
-    filter: grayscale(100%) contrast(110%) brightness(110%);
-    opacity: 0.12;
-    pointer-events: none;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-    z-index: 0;
+    object-position: center;
+    /* Efek Filter Abu-Putih */
+    filter: grayscale(100%) contrast(105%) brightness(102%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek sedikit berwarna jika di-hover */
+.profile-photo-wrapper:hover .profile-photo {
+    filter: grayscale(30%) contrast(100%);
+    transform: scale(1.02);
 }
 
 /* Animasi Elemen Scroll Reveal */
